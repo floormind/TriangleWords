@@ -29,14 +29,15 @@ class Alphabets:
 
     def compute_word(self, word):
         word_numeric_value = 0
-        letters_in_word = list(word)
+        small_word = word.lower()
+        letters_in_word = list(small_word)
         for letter in letters_in_word:
             is_valid = self.is_valid_letter(letter)
             if is_valid:
                 word_numeric_value += self.get_numeric_value(letter)
             else:
                 return False
-            return self.is_triangle(word_numeric_value)
+        return self.is_triangle(word_numeric_value)
 
     @staticmethod
     def is_valid_letter(letter):
